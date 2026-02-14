@@ -149,138 +149,243 @@
 # Masalalar
 
 
-# 🟢 1-masala. Asosiy metodlar
+#  1-masala
 
-matn = input("Satr kiriting: ")
+# matn = input("Satr kiriting: ")
 
-print("Uzunligi:", len(matn))
-print("Katta harflarda:", matn.upper())
-print("Kichik harflarda:", matn.lower())
+# print("Uzunligi:", len(matn))
+# print("Katta harflarda:", matn.upper())
+# print("Kichik harflarda:", matn.lower())
 
-if len(matn) > 0:
-    print("Birinchi belgi:", matn[0])
-    print("Oxirgi belgi:", matn[-1])
+# if len(matn) > 0:
+#     print("Birinchi belgi:", matn[0])
+#     print("Oxirgi belgi:", matn[-1])
+# else:
+#     print("Satr bo'sh")
+
+# #  2-masala
+
+# matn = input("Satr kiriting: ")
+
+# tozalangan = matn.strip()
+# yangi = " ".join(tozalangan.split())
+
+# print("Natija:", yangi)
+
+# #  3-masala
+
+# matn = input("Satr kiriting: ")
+
+# sozlar = matn.split()
+# belgilar = matn.replace(" ", "")
+
+# print("So‘zlar soni:", len(sozlar))
+# print("Belgilar soni (bo'sh joysiz):", len(belgilar))
+
+# #  4-masala
+
+# matn = input("Satr kiriting: ")
+# soz = input("Qidiriladigan so‘z: ")
+
+# if soz in matn:
+#     print("Topildi")
+# else:
+#     print("Topilmadi")
+
+# #  5-masala
+
+# matn = input("Satr kiriting: ")
+
+# yangi = matn.replace("a", "@")
+# print("Natija:", yangi)
+
+# #  6-masala
+
+# matn = input("Satr kiriting: ")
+
+# print("Faqat harflar:", matn.isalpha())
+# print("Faqat raqamlar:", matn.isdigit())
+# print("Faqat katta harflar:", matn.isupper())
+
+# #  7-masala
+
+# login = input("Login kiriting: ")
+
+# if (
+#     len(login) >= 8
+#     and not login.isspace()
+#     and login.isalnum()
+# ):
+#     print("Login qabul qilindi")
+# else:
+#     print("Login noto‘g‘ri")
+
+# # 8-masala
+
+# matn = input("Satr kiriting: ")
+
+# sozlar = matn.split()
+# teskari = [soz[::-1] for soz in sozlar]
+
+# natija = " ".join(teskari)
+# print("Natija:", natija)
+
+# #  9-masala
+
+# soz = input("So‘z kiriting: ")
+
+# if soz.lower() == soz.lower()[::-1]:
+#     print("Palindrom")
+# else:
+#     print("Palindrom emas")
+
+# #  10-masala
+
+# matn = input("Satr kiriting: ")
+
+# katta = 0
+# kichik = 0
+# raqam = 0
+# maxsus = 0
+
+# for belgi in matn:
+#     if belgi.isupper():
+#         katta += 1
+#     elif belgi.islower():
+#         kichik += 1
+#     elif belgi.isdigit():
+#         raqam += 1
+#     else:
+#         maxsus += 1
+
+# print("Katta harflar:", katta)
+# print("Kichik harflar:", kichik)
+# print("Raqamlar:", raqam)
+# print("Maxsus belgilar:", maxsus)
+
+# # 11-masala
+
+# matn = input("Gap kiriting: ")
+
+# sozlar = matn.split()
+# yangi = [soz.capitalize() for soz in sozlar]
+
+# print(" ".join(yangi))
+
+# #  12-masala
+
+# email = input("Email kiriting: ")
+
+# if (
+#     "@" in email
+#     and "." in email
+#     and not email.isspace()
+# ):
+#     print("Email to‘g‘ri")
+# else:
+#     print("Email noto‘g‘ri")
+
+# Homework
+
+# 1-masala
+n
+try:
+    son = int(input("Son kiriting: "))
+    print("Kiritilgan son:", son)
+except ValueError:
+    print("Iltimos, butun son kiriting")
+
+#  2-masala
+
+try:
+    a = int(input("Birinchi sonni kiriting: "))
+    b = int(input("Ikkinchi sonni kiriting: "))
+    natija = a / b
+    print("Natija:", natija)
+except ZeroDivisionError:
+    print("0 ga bo‘lish mumkin emas")
+except ValueError:
+    print("Noto‘g‘ri son kiritildi")
+
+#  3-masala
+
+numbers = [10, 20, 30]
+
+try:
+    indeks = int(input("Indeks kiriting: "))
+    print("Element:", numbers[indeks])
+except IndexError:
+    print("Bunday indeks mavjud emas")
+except ValueError:
+    print("Iltimos, butun son kiriting")
+
+#  4-masala
+
+try:
+    fayl = input("Fayl nomini kiriting: ")
+    with open(fayl, "r") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("Fayl mavjud emas")
+
+#  5-masala
+
+try:
+    yosh = int(input("Yoshingizni kiriting: "))
+    if yosh < 0:
+        raise ValueError("Yosh manfiy bo‘lishi mumkin emas")
+    print("Yoshingiz:", yosh)
+except ValueError as xato:
+    print(xato)
+
+#  6-masala
+
+my_dict = {"a": 1, "b": 2}
+
+try:
+    kalit = input("Kalit kiriting: ")
+    print("Qiymat:", my_dict[kalit])
+except KeyError:
+    print("Bunday kalit mavjud emas")
+
+#  7-masala
+
+try:
+    son = int(input("Son kiriting: "))
+    if son > 100:
+        raise ValueError("Son juda katta")
+    print("Son:", son)
+except ValueError as xato:
+    print(xato)
+
+#  8-masala
+
+try:
+    uzunlik = int(input("Ro‘yxat uzunligini kiriting: "))
+    my_list = []
+    for i in range(uzunlik):
+        qiymat = input(f"{i+1}-elementni kiriting: ")
+        my_list.append(qiymat)
+    print("Ro‘yxat:", my_list)
+except ValueError:
+    print("Noto‘g‘ri ma’lumot kiritildi")
+
+#  9-masala
+
+try:
+    a = float(input("Birinchi sonni kiriting: "))
+    b = float(input("Ikkinchi sonni kiriting: "))
+    print("Sonlar:", a, b)
+except ValueError:
+    print("Noto‘g‘ri son kiritildi")
+
+#  10-masala
+
+try:
+    son = int(input("Son kiriting: "))
+except ValueError:
+    print("Noto‘g‘ri son kiritildi")
 else:
-    print("Satr bo'sh")
-
-# 🟢 2-masala. Bo‘sh joylar bilan ishlash
-
-matn = input("Satr kiriting: ")
-
-tozalangan = matn.strip()
-yangi = " ".join(tozalangan.split())
-
-print("Natija:", yangi)
-
-# 🟢 3-masala. So‘zlarni sanash
-
-matn = input("Satr kiriting: ")
-
-sozlar = matn.split()
-belgilar = matn.replace(" ", "")
-
-print("So‘zlar soni:", len(sozlar))
-print("Belgilar soni (bo'sh joysiz):", len(belgilar))
-
-# 🟢 4-masala. Qidirish
-
-matn = input("Satr kiriting: ")
-soz = input("Qidiriladigan so‘z: ")
-
-if soz in matn:
-    print("Topildi")
-else:
-    print("Topilmadi")
-
-# 🟢 5-masala. Almashtirish
-
-matn = input("Satr kiriting: ")
-
-yangi = matn.replace("a", "@")
-print("Natija:", yangi)
-
-# 🟡 6-masala. Satrni tekshirish\
-
-matn = input("Satr kiriting: ")
-
-print("Faqat harflar:", matn.isalpha())
-print("Faqat raqamlar:", matn.isdigit())
-print("Faqat katta harflar:", matn.isupper())
-
-# 🟡 7-masala. Login tekshiruvi
-
-login = input("Login kiriting: ")
-
-if (
-    len(login) >= 8
-    and not login.isspace()
-    and login.isalnum()
-):
-    print("Login qabul qilindi")
-else:
-    print("Login noto‘g‘ri")
-
-# 🟡 8-masala. So‘zlarni teskari qilish
-
-matn = input("Satr kiriting: ")
-
-sozlar = matn.split()
-teskari = [soz[::-1] for soz in sozlar]
-
-natija = " ".join(teskari)
-print("Natija:", natija)
-
-# 🔵 9-masala. Palindrom
-
-soz = input("So‘z kiriting: ")
-
-if soz.lower() == soz.lower()[::-1]:
-    print("Palindrom")
-else:
-    print("Palindrom emas")
-
-# 🔵 10-masala. Murakkab tahlil
-
-matn = input("Satr kiriting: ")
-
-katta = 0
-kichik = 0
-raqam = 0
-maxsus = 0
-
-for belgi in matn:
-    if belgi.isupper():
-        katta += 1
-    elif belgi.islower():
-        kichik += 1
-    elif belgi.isdigit():
-        raqam += 1
-    else:
-        maxsus += 1
-
-print("Katta harflar:", katta)
-print("Kichik harflar:", kichik)
-print("Raqamlar:", raqam)
-print("Maxsus belgilar:", maxsus)
-
-# 🔵 11-masala. Matnni formatlash
-
-matn = input("Gap kiriting: ")
-
-sozlar = matn.split()
-yangi = [soz.capitalize() for soz in sozlar]
-
-print(" ".join(yangi))
-
-# 🔴 12-masala. Email tekshiruvi
-
-email = input("Email kiriting: ")
-
-if (
-    "@" in email
-    and "." in email
-    and not email.isspace()
-):
-    print("Email to‘g‘ri")
-else:
-    print("Email noto‘g‘ri")
+    print("Muvaffaqiyatli bajarildi")
+finally:
+    print("Dastur tugadi")
