@@ -99,3 +99,68 @@ dog1.ovoz_ber()
 # umumiy_maosh() metodi (maosh + bonus)
 
 # class Employee:
+
+
+class Employee:
+    def __init__(self, ism, maosh):
+        self.ism = ism
+        self.maosh = maosh
+
+    def info(self):
+        print(f"Ism: {self.ism}")
+        print(f"Maosh: {self.maosh}")
+
+class Manager(Employee):
+    def __init__(self, ism, maosh, bonus):
+        super().__init__(ism, maosh)
+        self.bonus = bonus
+
+    def umumiy_maosh(self):
+        return self.maosh + self.bonus
+
+
+manager1 = Manager("Vali", 1000, 300)
+manager1.info()
+
+print(f"Umumiy maosh: {manager1.umumiy_maosh()}")
+
+# 4 - masala
+#  Talabalar
+
+# Person klassi:
+
+# ism, familiya
+
+# Student klassi:
+
+# Qo‘shimcha kurs, baholar (ro‘yxat)
+
+# orta_baho() metodini yozing.
+
+
+class Person:
+    def __init__(self, ism, familiya):
+        self.ism = ism
+        self.familiya = familiya
+
+    def full_name(self):
+        return f"{self.ism} {self.familiya}"
+
+
+
+class Student(Person):
+    def __init__(self, ism, familiya, kurs, baholar):
+        super().__init__(ism, familiya)
+        self.kurs = kurs
+        self.baholar = baholar
+
+    def orta_baho(self):
+        if len(self.baholar) == 0:
+            return 0
+        return sum(self.baholar) / len(self.baholar)
+
+
+
+student1 = Student("Ali", "Valiyev", 2, [5, 4, 3, 5, 4])
+
+print("Talaba:", student1.full_name())
