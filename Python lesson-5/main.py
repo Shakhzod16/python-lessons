@@ -278,16 +278,6 @@
 
 
 # 18-masala. Fayldagi har bir qator boshiga raqam qo‘shish
-# Shart:
-# matn.txt faylidagi har bir qator boshiga tartib raqamini qo‘shib, raqamli.txt fayliga yozing.
-# Masalan:
-# Ali
-# Vali
-# Sami
-# Natija:
-# 1. Ali
-# 2. Vali
-# 3. Sami
 
 with open("matn.txt", "r", encoding="utf-8") as fayl:
     qatorlar = fayl.readlines()
@@ -305,6 +295,20 @@ print("Raqamli fayl yaratildi.")
 # file1.txt va file2.txt fayllarini o‘qib, ularni result.txt fayliga birlashtiring.
 
 
+# 19-masala
+
+with open("file1.txt", "r", encoding="utf-8") as f1:
+    content1 = f1.read()
+
+with open("file2.txt", "r", encoding="utf-8") as f2:
+    content2 = f2.read()
+
+with open("result.txt", "w", encoding="utf-8") as result:
+    result.write(content1)
+    result.write("\n")  # oraliq tashlab qo'yish
+    result.write(content2)
+
+print("Fayllar muvaffaqiyatli birlashtirildi!")
 
 
 # 20-masala. Faylda berilgan so‘zni qidirish

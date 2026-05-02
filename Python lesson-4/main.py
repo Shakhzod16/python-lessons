@@ -288,7 +288,7 @@
 # Homework
 
 # 1-masala
-n
+
 try:
     son = int(input("Son kiriting: "))
     print("Kiritilgan son:", son)
